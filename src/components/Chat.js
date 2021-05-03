@@ -5,6 +5,7 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 
 import './Chat.css';
 import db from '../firebase';
+import Message from './Message';
 
 function Chat() {
     const { roomId } = useParams();
@@ -49,6 +50,16 @@ function Chat() {
                         <InfoOutlinedIcon /> Details
                     </p>
                 </div>
+            </div>
+
+            <div className="chat__messages">
+                {roomMessages.map(message => (
+                    <Message
+                        message={message.message}
+                        timestamp={message.timestamp}
+                        user={message.user}
+                        userImage={message.userImage} />
+                ))}
             </div>
         </div>
     )
