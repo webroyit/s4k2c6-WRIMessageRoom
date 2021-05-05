@@ -13,9 +13,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import './Sidebar.css';
 import db from '../firebase';
+import { useStateValue } from '../StateProvider';
 import SidebarOption from './SidebarOption';
 
 function Sidebar() {
+    const [{ user }] = useStateValue();
+
     const [channels, setChannels] = useState([]);
 
     useEffect(() => {
@@ -40,7 +43,7 @@ function Sidebar() {
                     <h2>Guest Room</h2>
                     <h3>
                         <FiberManualRecordIcon />
-                        Roy Web
+                        {user?.displayName}
                     </h3>
                 </div>
                 <AddIcon />
