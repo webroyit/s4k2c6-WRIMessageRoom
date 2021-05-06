@@ -11,7 +11,7 @@ function ChatInput({ channelName, channelId }) {
 
     const sendMessage = e => {
         e.preventDefault();
-        console.log("send")
+
         if (channelId) {
             db.collection('rooms').doc(channelId).collection('messages').add({
                 message: input,
@@ -19,6 +19,8 @@ function ChatInput({ channelName, channelId }) {
                 user: user.displayName,
                 userImage: user.photoURL
             })
+
+            setInput('');
         }
     }
     return (
