@@ -1,4 +1,16 @@
 # WRI Message Room
+Message App.  The template is from Clever Programmer youtube channel.
+
+## What it does?
+- Real time chat
+- Create a chat room
+- Gmail Login
+
+## Tools
+- React
+- CSS
+- Material-UI
+- Firebase
 
 ## Notes
 - RealTime Database is a NoSQL database.
